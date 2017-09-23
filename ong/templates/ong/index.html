@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% load static from staticfiles %}
+{% block content %}
+<div class="mdl-grid mdl-grid--no-spacing opciones">
+  <div class="mdl-cell mdl-cell--4-col mdl-cell--12-col-tablet mdl-cell--12-col-phone" style="background-image: url('{% static 'img/ayudar.jpg' %}'); background-position: center;background-size: cover;">
+  	<a href="" class="link_ayuda">Ayudar</a>
+	<div class="info info_ayuda" style="display: none;">
+		Encuentra las organizaciones que te necesitan como voluntario.
+	</div>
+  </div>
+  <div class="mdl-cell mdl-cell--4-col mdl-cell--12-col-tablet mdl-cell--12-col-phone" style="background-image: url('{% static 'img/donar.jpg' %}'); background-position: center;background-size: cover;">
+  	<a href="" class="link_donar">Donar</a>
+  	<div class="info info_donar" style="display: none;">
+		Encuentra lugares y/o personas que necesitan tus donativos.
+	</div>
+  </div>
+  <div class="mdl-cell mdl-cell--4-col mdl-cell--12-col-tablet mdl-cell--12-col-phone" style="background-image: url('{% static 'img/ong.jpg' %}'); background-position: center;background-size: cover;">
+  	<a href="" class="link_ong">Mi ONG</a>
+  	<div class="info info_ong" style="display: none;">
+		Registra tu ONG y consigue mas donativos y voluntarios
+	</div>
+  </div>
+</div>
+{% endblock %} 
+{% block scripts %}
+<script type="text/javascript">
+	$( "a.link_ayuda" ).mouseover(function() {
+    	$("div.info_ayuda").css("display", "block");    
+  	}).mouseout(function() {
+    	$("div.info_ayuda").css("display", "none");   
+  	});
+  	$( "a.link_donar" ).mouseover(function() {
+    	$("div.info_donar").css("display", "block");    
+  	}).mouseout(function() {
+    	$("div.info_donar").css("display", "none");   
+  	});
+  	$( "a.link_ong" ).mouseover(function() {
+    	$("div.info_ong").css("display", "block");    
+  	}).mouseout(function() {
+    	$("div.info_ong").css("display", "none");   
+  	});
+
+</script>
+{% endblock %}
